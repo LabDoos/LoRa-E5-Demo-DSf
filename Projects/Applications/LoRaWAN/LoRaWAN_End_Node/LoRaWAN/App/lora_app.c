@@ -448,6 +448,7 @@ static void SendTxData(void)
     longitude = sensor_data.longitude;
 
     AppData.Buffer[i++] = GetBatteryLevel();        /* 1 (very low) to 254 (fully charged) */
+    AppData.Buffer[i++] = BSP_LED_GetState(LED_RED);
     AppData.Buffer[i++] = (uint8_t)((latitude >> 16) & 0xFF);
     AppData.Buffer[i++] = (uint8_t)((latitude >> 8) & 0xFF);
     AppData.Buffer[i++] = (uint8_t)(latitude & 0xFF);
