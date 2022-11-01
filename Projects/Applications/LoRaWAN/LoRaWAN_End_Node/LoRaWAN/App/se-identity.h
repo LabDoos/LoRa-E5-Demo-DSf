@@ -95,12 +95,13 @@ extern "C" {
 /*!
  * end-device IEEE EUI (big endian)
  */
-#define LORAWAN_DEVICE_EUI                                 { 0x2C, 0xF7, 0xF1, 0x20, 0x24, 0x90, 0x15, 0x10 }
+//#define LORAWAN_DEVICE_EUI                                 { 0x2C, 0xF7, 0xF1, 0x20, 0x24, 0x90, 0x15, 0x10 } // devboard 1
+#define LORAWAN_DEVICE_EUI									{ 0x2C, 0xF7, 0xF1, 0x20, 0x24, 0x90, 0x02, 0xEC } // devboard 2
 
 /*!
  * App/Join server IEEE EUI (big endian)
  */
-#define LORAWAN_JOIN_EUI                                   { 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x06 }
+#define LORAWAN_JOIN_EUI                                   { 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x06 } // devboard 1 and devboard 2
 
 /*!
  * When set to 1 DevAddr is LORAWAN_DEVICE_ADDRESS
@@ -112,27 +113,36 @@ extern "C" {
 /*!
  * Device address on the network (big endian)
  */
-#define LORAWAN_DEVICE_ADDRESS                             ( uint32_t )0x0100000A
+//#define LORAWAN_DEVICE_ADDRESS                             ( uint32_t )0x0100000A // devboard 1
+#define LORAWAN_DEVICE_ADDRESS                             ( uint32_t )0x260BE7ED // devboard 2
 
 /*!
  * Application root key
  */
-#define LORAWAN_APP_KEY                                    28,D3,CE,41,DE,B5,A1,56,95,22,D9,A4,86,2E,0E,3E
+//#define LORAWAN_APP_KEY                                    28,D3,CE,41,DE,B5,A1,56,95,22,D9,A4,86,2E,0E,3E // devboard 1
+#define LORAWAN_APP_KEY                                    2B,7E,15,16,28,AE,D2,A6,AB,F7,15,88,09,CF,4F,3C // devboard 2
 
 /*!
  * Network root key
  */
-#define LORAWAN_NWK_KEY                                    28,D3,CE,41,DE,B5,A1,56,95,22,D9,A4,86,2E,0E,3E
+//#define LORAWAN_NWK_KEY                                    28,D3,CE,41,DE,B5,A1,56,95,22,D9,A4,86,2E,0E,3E // devboard 1
+#define LORAWAN_NWK_KEY                                    2B,7E,15,16,28,AE,D2,A6,AB,F7,15,88,09,CF,4F,3C // devboard 2
 
 /*!
  * Forwarding Network session key
+ * When OTAA is used: This key is dynamically re-generated on every activation.
+ * When ABP is used: This key value is used.
+ * see: https://www.thethingsnetwork.org/docs/lorawan/security/
  */
-#define LORAWAN_NWK_S_KEY                                  2B,7E,15,16,28,AE,D2,A6,AB,F7,15,88,09,CF,4F,3C
+#define LORAWAN_NWK_S_KEY                                  00 // devboard 1 & 2 with OTAA
 
 /*!
  * Application session key
+ * When OTAA is used: This key is dynamically re-generated on every activation.
+ * When ABP is used: This key value is used.
+ * see: https://www.thethingsnetwork.org/docs/lorawan/security/
  */
-#define LORAWAN_APP_S_KEY                                  2B,7E,15,16,28,AE,D2,A6,AB,F7,15,88,09,CF,4F,3C
+#define LORAWAN_APP_S_KEY                                  00 // devboard 1 & 2 with OTAA
 
 /*!
  * Format commissioning keys
