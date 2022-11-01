@@ -134,7 +134,7 @@ extern "C" {
  * When ABP is used: This key value is used.
  * see: https://www.thethingsnetwork.org/docs/lorawan/security/
  */
-#define LORAWAN_NWK_S_KEY                                  00 // devboard 1 & 2 with OTAA
+#define LORAWAN_NWK_S_KEY                                  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00 // devboard 1 & 2 with OTAA
 
 /*!
  * Application session key
@@ -142,7 +142,7 @@ extern "C" {
  * When ABP is used: This key value is used.
  * see: https://www.thethingsnetwork.org/docs/lorawan/security/
  */
-#define LORAWAN_APP_S_KEY                                  00 // devboard 1 & 2 with OTAA
+#define LORAWAN_APP_S_KEY                                  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00 // devboard 1 & 2 with OTAA
 
 /*!
  * Format commissioning keys
